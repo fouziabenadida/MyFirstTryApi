@@ -5,7 +5,7 @@ using MyApi;
 [ApiController]
 public class ProductController : ControllerBase
 {
-    private readonly List<Product> _products = new List<Product>(); // Replace this with a database connection
+    private readonly List<Product> _products = new List<Product>(); 
 
     [HttpGet]
     public IActionResult Get()
@@ -16,7 +16,7 @@ public class ProductController : ControllerBase
     [HttpPost]
     public IActionResult Post(Product product)
     {
-        // Add validation logic if necessary
+     
         _products.Add(product);
         return CreatedAtAction(nameof(Get), new { id = product.Id }, product);
     }
